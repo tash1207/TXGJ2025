@@ -69,17 +69,15 @@ public class CharacterController2D : MonoBehaviour
             moveInput = moveAction.action.ReadValue<Vector2>();
         }
 
-        // Movement controls
+        // Movement controls - immediate response for precise air control
         if (Mathf.Abs(moveInput.x) > 0.1f)
         {
             moveDirection = moveInput.x;
         }
         else
         {
-            if (isGrounded || r2d.linearVelocity.magnitude < 0.01f)
-            {
-                moveDirection = 0;
-            }
+            // Stop immediately when input is released (Megaman-style)
+            moveDirection = 0;
         }
 
         // Change facing direction
@@ -128,21 +126,12 @@ public class CharacterController2D : MonoBehaviour
             }
         }
 
-        // Apply movement velocity with air control
+        // Apply movement velocity with precise air control (Megaman-style)
         float currentAirControl = isGrounded ? 1f : airControlFactor;
         float targetVelocityX = moveDirection * maxSpeed * currentAirControl;
 
-        if (isGrounded)
-        {
-            // Full control when grounded
-            r2d.linearVelocity = new Vector2(targetVelocityX, r2d.linearVelocity.y);
-        }
-        else
-        {
-            // Lerp towards target velocity when in air for smoother air control
-            float newVelocityX = Mathf.Lerp(r2d.linearVelocity.x, targetVelocityX, Time.fixedDeltaTime * 10f);
-            r2d.linearVelocity = new Vector2(newVelocityX, r2d.linearVelocity.y);
-        }
+        // Direct velocity assignment for immediate response (like Megaman)
+        r2d.linearVelocity = new Vector2(targetVelocityX, r2d.linearVelocity.y);
 
         // Simple debug
         Debug.DrawLine(groundCheckPos, groundCheckPos - new Vector3(0, colliderRadius, 0), isGrounded ? Color.green : Color.red);
