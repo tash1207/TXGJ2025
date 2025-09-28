@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1688859628487898531}
   - component: {fileID: 6991027288548161261}
   - component: {fileID: 8347867795714760637}
+  - component: {fileID: 3124930993683137995}
   m_Layer: 0
   m_Name: EnemyDasher
   m_TagString: Untagged
@@ -82,7 +83,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 14
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
+  m_Sprite: {fileID: 477624731932831720, guid: 0472795f070c6484ba2b8e7917d91882, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -127,8 +128,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Offset: {x: -0.0028486252, y: -0.056986034}
+  m_Size: {x: 0.49282265, y: 1.2933723}
   m_Direction: 0
 --- !u!50 &6991027288548161261
 Rigidbody2D:
@@ -174,3 +175,25 @@ MonoBehaviour:
   playerLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!95 &3124930993683137995
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779447693106142417}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 42b7bd4ba5985f54ba36284e999309f9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
