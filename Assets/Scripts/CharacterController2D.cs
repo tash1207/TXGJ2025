@@ -38,6 +38,8 @@ public class CharacterController2D : MonoBehaviour
     private bool wasGrounded = false;
     private int groundContactCount = 0;
 
+    bool allowMovement = true;
+
     void Start()
     {
         t = transform;
@@ -67,6 +69,16 @@ public class CharacterController2D : MonoBehaviour
         }
     }
 
+    void OnEnable()
+    {
+        Timer.OnTimeRunOut += Die;
+    }
+
+    void OnDisable()
+    {
+        Timer.OnTimeRunOut -= Die;
+    }
+
     void OnDestroy()
     {
         // Clean up input action callbacks
@@ -78,6 +90,8 @@ public class CharacterController2D : MonoBehaviour
 
     void Update()
     {
+        if (!allowMovement) { return; }
+
         // Store previous ground state
         wasGrounded = isGrounded;
 
@@ -210,5 +224,10 @@ public class CharacterController2D : MonoBehaviour
         {
             animator.SetTrigger("Die");
         }
+
+        allowMovement = false;
+        r2d.linearVelocity = Vector2.zero;
+        moveDirection = 0;
+        animator.SetFloat("Speed", 0);
     }
 }
