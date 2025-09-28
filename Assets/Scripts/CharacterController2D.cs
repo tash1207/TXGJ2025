@@ -17,10 +17,17 @@ public class CharacterController2D : MonoBehaviour
     [Header("Input Actions")]
     public InputActionReference moveAction;
     public InputActionReference jumpAction;
+    public InputActionReference attackAction;
 
     [Header("Ground Detection")]
     public Collider2D groundCheckCollider;
     public LayerMask groundLayerMask = -1;
+
+    [Header("Attack System")]
+    public ParticleSystem sprayAttack;
+    public float attackDuration = 0.5f;
+    public float attackCooldown = 0.3f;
+    public LayerMask enemyLayerMask = -1;
 
     [Header("Animation")]
     public Animator animator;
@@ -37,6 +44,8 @@ public class CharacterController2D : MonoBehaviour
     private bool jumpPressed = false;
     private bool wasGrounded = false;
     private int groundContactCount = 0;
+    private bool attackPressed = false;
+    private float lastAttackTime = 0f;
 
     bool allowMovement = true;
 
@@ -67,6 +76,12 @@ public class CharacterController2D : MonoBehaviour
             jumpAction.action.Enable();
             jumpAction.action.performed += OnJump;
         }
+
+        if (attackAction != null)
+        {
+            attackAction.action.Enable();
+            attackAction.action.performed += OnAttack;
+        }
     }
 
     void OnEnable()
@@ -85,6 +100,11 @@ public class CharacterController2D : MonoBehaviour
         if (jumpAction != null)
         {
             jumpAction.action.performed -= OnJump;
+        }
+
+        if (attackAction != null)
+        {
+            attackAction.action.performed -= OnAttack;
         }
     }
 
@@ -144,6 +164,14 @@ public class CharacterController2D : MonoBehaviour
         if (!isGrounded)
         {
             jumpPressed = false;
+        }
+
+        // Handle attacking
+        if (attackPressed && Time.time >= lastAttackTime + attackCooldown)
+        {
+            PerformAttack();
+            attackPressed = false;
+            lastAttackTime = Time.time;
         }
 
         // Update animator parameters
@@ -215,6 +243,76 @@ public class CharacterController2D : MonoBehaviour
     private void OnJump(InputAction.CallbackContext context)
     {
         jumpPressed = true;
+    }
+
+    // Input callback for attack action
+    private void OnAttack(InputAction.CallbackContext context)
+    {
+        attackPressed = true;
+    }
+
+    private void PerformAttack()
+    {
+        if (sprayAttack == null) return;
+
+        // Position the particle system in front of the player
+        Vector3 attackPosition = transform.position + new Vector3(facingRight ? 1f : -1f, 0, 0);
+        sprayAttack.transform.position = attackPosition;
+
+        // Rotate the spray based on facing direction
+        var shape = sprayAttack.shape;
+        shape.rotation = new Vector3(0, 0, facingRight ? 0 : 180);
+
+        // Play the particle system
+        sprayAttack.Play();
+
+        // Start coroutine to detect enemies in spray area
+        StartCoroutine(AttackCoroutine());
+
+        Debug.Log("Attack performed!");
+    }
+
+    private IEnumerator AttackCoroutine()
+    {
+        float attackTimer = 0f;
+
+        while (attackTimer < attackDuration)
+        {
+            // Create a cone area in front of the player for enemy detection
+            Vector2 attackDirection = facingRight ? Vector2.right : Vector2.left;
+            Vector2 attackOrigin = (Vector2)transform.position + attackDirection * 0.5f;
+
+            // Check for enemies in attack range
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackOrigin, 1.5f, enemyLayerMask);
+
+            foreach (Collider2D enemy in hitEnemies)
+            {
+                // Check if enemy is in front of player (cone check)
+                Vector2 toEnemy = (enemy.transform.position - transform.position).normalized;
+                float dotProduct = Vector2.Dot(attackDirection, toEnemy);
+
+                if (dotProduct > 0.3f) // 60-degree cone
+                {
+                    // Try to get enemy script and damage/kill it
+                    var enemyScript = enemy.GetComponent<Enemy>();
+                    if (enemyScript != null)
+                    {
+                        enemyScript.Die();
+                        Debug.Log($"Killed enemy: {enemy.name}");
+
+                        // Add time to timer (assuming you have a timer script)
+                        var timer = FindObjectOfType<Timer>();
+                        if (timer != null)
+                        {
+                            timer.AddTime(5f); // Add 5 seconds for killing an enemy
+                        }
+                    }
+                }
+            }
+
+            attackTimer += Time.deltaTime;
+            yield return null;
+        }
     }
 
     // Call this method when player dies
