@@ -532,7 +532,7 @@ GameObject:
   - component: {fileID: 1066394697}
   - component: {fileID: 1066394696}
   - component: {fileID: 1066394695}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Environment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -564,7 +564,7 @@ TilemapCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 0a12a1ffb12495a4faabb049a4b9c601, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -10328,9 +10328,18 @@ MonoBehaviour:
   airControlFactor: 1
   moveAction: {fileID: -1680190386980627800, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   jumpAction: {fileID: -2099379676528639254, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  groundCheckCollider: {fileID: 1282169978}
+  groundLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!4 &1282169977 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2513814276453892493, guid: 41d7e371f718059448e5f0f5c3186722, type: 3}
+  m_PrefabInstance: {fileID: 1282169974}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &1282169978 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 4374689800820507678, guid: 41d7e371f718059448e5f0f5c3186722, type: 3}
   m_PrefabInstance: {fileID: 1282169974}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807

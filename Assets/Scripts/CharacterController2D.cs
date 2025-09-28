@@ -18,6 +18,10 @@ public class CharacterController2D : MonoBehaviour
     public InputActionReference moveAction;
     public InputActionReference jumpAction;
 
+    [Header("Ground Detection")]
+    public Collider2D groundCheckCollider;
+    public LayerMask groundLayerMask = -1;
+
     bool facingRight = true;
     float moveDirection = 0;
     bool isGrounded = false;
@@ -28,6 +32,8 @@ public class CharacterController2D : MonoBehaviour
     // Input values
     private Vector2 moveInput;
     private bool jumpPressed = false;
+    private bool wasGrounded = false;
+    private int groundContactCount = 0;
 
     void Start()
     {
@@ -63,6 +69,12 @@ public class CharacterController2D : MonoBehaviour
 
     void Update()
     {
+        // Store previous ground state
+        wasGrounded = isGrounded;
+
+        // Update ground state based on trigger contacts
+        isGrounded = groundContactCount > 0;
+
         // Read input from the new Input System
         if (moveAction != null)
         {
@@ -96,46 +108,62 @@ public class CharacterController2D : MonoBehaviour
         }
 
         // Handle jumping
-        if (jumpPressed && isGrounded)
+        if (jumpPressed && isGrounded && wasGrounded)
         {
             r2d.linearVelocity = new Vector2(r2d.linearVelocity.x, jumpHeight);
             jumpPressed = false; // Reset jump flag
+        }
+
+        // Clear jump input if we're not grounded to prevent buffering
+        if (!isGrounded)
+        {
+            jumpPressed = false;
+        }
+
+        // Clear jump input if we're not grounded to prevent buffering
+        if (!isGrounded)
+        {
+            jumpPressed = false;
         }
     }
 
     void FixedUpdate()
     {
-        Bounds colliderBounds = mainCollider.bounds;
-        float colliderRadius = mainCollider.size.x * 0.4f * Mathf.Abs(transform.localScale.x);
-        Vector3 groundCheckPos = colliderBounds.min + new Vector3(colliderBounds.size.x * 0.5f, colliderRadius * 0.9f, 0);
-
-        // Check if player is grounded
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheckPos, colliderRadius);
-
-        // Check if any of the overlapping colliders are not player collider, if so, set isGrounded to true
-        isGrounded = false;
-        if (colliders.Length > 0)
-        {
-            for (int i = 0; i < colliders.Length; i++)
-            {
-                if (colliders[i] != mainCollider)
-                {
-                    isGrounded = true;
-                    break;
-                }
-            }
-        }
-
         // Apply movement velocity with precise air control (Megaman-style)
         float currentAirControl = isGrounded ? 1f : airControlFactor;
         float targetVelocityX = moveDirection * maxSpeed * currentAirControl;
 
         // Direct velocity assignment for immediate response (like Megaman)
         r2d.linearVelocity = new Vector2(targetVelocityX, r2d.linearVelocity.y);
+    }
 
-        // Simple debug
-        Debug.DrawLine(groundCheckPos, groundCheckPos - new Vector3(0, colliderRadius, 0), isGrounded ? Color.green : Color.red);
-        Debug.DrawLine(groundCheckPos, groundCheckPos - new Vector3(colliderRadius, 0, 0), isGrounded ? Color.green : Color.red);
+    // Trigger events for ground detection
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other == groundCheckCollider) return; // Ignore self
+
+        // Check if the colliding object is on the ground layer
+        if (IsInLayerMask(other.gameObject.layer, groundLayerMask))
+        {
+            groundContactCount++;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other == groundCheckCollider) return; // Ignore self
+
+        // Check if the colliding object is on the ground layer
+        if (IsInLayerMask(other.gameObject.layer, groundLayerMask))
+        {
+            groundContactCount = Mathf.Max(0, groundContactCount - 1);
+        }
+    }
+
+    // Helper function to check if a layer is in the layer mask
+    private bool IsInLayerMask(int layer, LayerMask layerMask)
+    {
+        return layerMask == (layerMask | (1 << layer));
     }
 
     // Input callback for jump action
