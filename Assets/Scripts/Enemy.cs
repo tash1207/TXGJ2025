@@ -18,6 +18,12 @@ public class Enemy : MonoBehaviour
     [Header("Animation")]
     public Animator animator;
 
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip deathSound;
+    [Range(0f, 1f)]
+    public float deathSoundVolume = 0.5f; // Added to control death sound volume
+
     private enum EnemyState
     {
         Idle,
@@ -29,6 +35,7 @@ public class Enemy : MonoBehaviour
     private Rigidbody2D rb;
     private bool facingRight = true;
     private float lastBounceTime = 0f;
+    private bool isDead = false; // Added to prevent multiple Die calls
 
     private float subtractTimeCooldownTimer = 1f;
     private float cooldownDuration = 1f;
@@ -51,11 +58,17 @@ public class Enemy : MonoBehaviour
         {
             animator = GetComponent<Animator>();
         }
+
+        // Auto-find audio source if not assigned
+        if (audioSource == null)
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
     }
 
     void Update()
     {
-        if (player == null) return;
+        if (player == null || isDead) return;
 
         subtractTimeCooldownTimer += Time.deltaTime;
 
@@ -129,12 +142,26 @@ public class Enemy : MonoBehaviour
     // Called by player's attack system - instantly kills enemy
     public void Die()
     {
+        if (isDead) return; // Prevent multiple Die calls
+        isDead = true;
+
         if (animator != null)
         {
             animator.SetTrigger("Die");
         }
 
-        // Destroy after short delay for death animation
+        // Play the death sound
+        if (audioSource != null && deathSound != null)
+        {
+            audioSource.PlayOneShot(deathSound, deathSoundVolume);
+            Debug.Log($"Playing death sound for {gameObject.name} at volume {deathSoundVolume}");
+        }
+        else
+        {
+            Debug.LogWarning("AudioSource or DeathSound is not assigned in Enemy!");
+        }
+
+        // Destroy after short delay for death animation and sound
         StartCoroutine(DestroyAfterDelay(0.5f));
     }
 
@@ -170,7 +197,7 @@ public class Enemy : MonoBehaviour
             if (subtractTimeCooldownTimer > cooldownDuration)
             {
                 Timer.OnSubtractTime(timeToSubtract);
-                subtractTimeCooldownTimer = 0f;   
+                subtractTimeCooldownTimer = 0f;
             }
 
             // Calculate bounce direction (away from player)

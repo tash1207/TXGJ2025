@@ -179,6 +179,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -254,6 +258,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -324,6 +332,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -483,6 +495,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -789,6 +805,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -854,6 +874,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -990,6 +1014,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1060,6 +1088,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1150,6 +1182,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1215,6 +1251,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1280,6 +1320,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1355,6 +1399,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1425,6 +1473,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1495,6 +1547,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1560,6 +1616,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1630,6 +1690,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1705,6 +1769,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1775,6 +1843,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1845,6 +1917,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1910,6 +1986,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2135,6 +2215,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2360,6 +2444,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2425,6 +2513,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2597,6 +2689,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2992,6 +3088,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3062,6 +3162,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3132,6 +3236,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3207,6 +3315,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3277,6 +3389,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4092,6 +4208,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4157,6 +4277,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13547,6 +13671,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13622,6 +13750,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13692,6 +13824,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13749,6 +13885,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainCharacter
       objectReference: {fileID: 0}
+    - target: {fileID: 5286760030303338223, guid: 41d7e371f718059448e5f0f5c3186722, type: 3}
+      propertyPath: attackSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 739fb679c97ea0346be727d378f8bf3e, type: 3}
+    - target: {fileID: 5286760030303338223, guid: 41d7e371f718059448e5f0f5c3186722, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13814,6 +13958,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13884,6 +14032,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13964,6 +14116,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14693,6 +14849,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14758,6 +14918,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14833,6 +14997,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15030,6 +15198,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15100,6 +15272,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15165,6 +15341,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15235,6 +15415,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15305,6 +15489,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15375,6 +15563,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15445,6 +15637,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15510,6 +15706,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15658,6 +15858,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15728,6 +15932,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15793,6 +16001,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15868,6 +16080,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 13.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347867795714760637, guid: 5b94eb70612b3b949b5ecac3e7afbf75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 781498227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

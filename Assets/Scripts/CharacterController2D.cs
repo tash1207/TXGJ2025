@@ -28,6 +28,8 @@ public class CharacterController2D : MonoBehaviour
     public float attackDuration = 0.5f;
     public float attackCooldown = 0.3f;
     public LayerMask enemyLayerMask = -1;
+    public AudioSource audioSource;
+    public AudioClip attackSound;
 
     [Header("Animation")]
     public Animator animator;
@@ -65,6 +67,12 @@ public class CharacterController2D : MonoBehaviour
             animator = GetComponent<Animator>();
         }
 
+        // Auto-find audio source if not assigned
+        if (audioSource == null)
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
+
         // Enable input actions
         if (moveAction != null)
         {
@@ -87,13 +95,11 @@ public class CharacterController2D : MonoBehaviour
     void OnEnable()
     {
         Timer.OnTimeRunOut += Die;
-        WinGame.OnGameWon += PausePlayerMovement;
     }
 
     void OnDisable()
     {
         Timer.OnTimeRunOut -= Die;
-        WinGame.OnGameWon -= PausePlayerMovement;
     }
 
     void OnDestroy()
@@ -201,37 +207,23 @@ public class CharacterController2D : MonoBehaviour
     // Trigger events for ground detection
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log($"Trigger Enter: {other.name}, Layer: {other.gameObject.layer}");
-
         if (other == groundCheckCollider) return; // Ignore self
 
         // Check if the colliding object is on the ground layer
         if (IsInLayerMask(other.gameObject.layer, groundLayerMask))
         {
             groundContactCount++;
-            Debug.Log($"Ground contact added! Total: {groundContactCount}");
-        }
-        else
-        {
-            Debug.Log($"Not ground layer. Expected layers in mask: {groundLayerMask.value}");
         }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        Debug.Log($"Trigger Exit: {other.name}, Layer: {other.gameObject.layer}");
-
         if (other == groundCheckCollider) return; // Ignore self
 
         // Check if the colliding object is on the ground layer
         if (IsInLayerMask(other.gameObject.layer, groundLayerMask))
         {
             groundContactCount = Mathf.Max(0, groundContactCount - 1);
-            Debug.Log($"Ground contact removed! Total: {groundContactCount}");
-        }
-        else
-        {
-            Debug.Log($"Exit from non-ground layer object: {other.name}");
         }
     }
 
@@ -250,12 +242,23 @@ public class CharacterController2D : MonoBehaviour
     // Input callback for attack action
     private void OnAttack(InputAction.CallbackContext context)
     {
+        Debug.Log("Attack input detected!");
         attackPressed = true;
     }
 
     private void PerformAttack()
     {
         if (sprayAttack == null) return;
+
+        // Play the attack sound
+        if (audioSource != null && attackSound != null)
+        {
+            audioSource.PlayOneShot(attackSound);
+        }
+        else
+        {
+            Debug.LogWarning("AudioSource or AttackSound is not assigned in CharacterController2D!");
+        }
 
         // Position the particle system in front of the player
         Vector3 attackPosition = transform.position + new Vector3(facingRight ? 0.5f : -0.5f, 0, 0);
@@ -287,8 +290,6 @@ public class CharacterController2D : MonoBehaviour
 
         // Start coroutine to detect enemies in spray area
         StartCoroutine(AttackCoroutine());
-
-        Debug.Log($"Attack performed facing {(facingRight ? "right" : "left")}!");
     }
 
     private IEnumerator AttackCoroutine()
@@ -316,15 +317,13 @@ public class CharacterController2D : MonoBehaviour
                     var enemyScript = enemy.GetComponent<Enemy>();
                     if (enemyScript != null)
                     {
-                        float timeToAdd = enemyScript.GetTimeToAdd();
                         enemyScript.Die();
-                        Debug.Log($"Killed enemy: {enemy.name}");
 
                         // Add time to timer (assuming you have a timer script)
                         var timer = FindObjectOfType<Timer>();
                         if (timer != null)
                         {
-                            timer.AddTime(timeToAdd); // Add time for killing an enemy
+                            timer.AddTime(5f); // Add 5 seconds for killing an enemy
                         }
                     }
                 }
@@ -343,13 +342,6 @@ public class CharacterController2D : MonoBehaviour
             animator.SetTrigger("Die");
         }
 
-        PausePlayerMovement();
-
-        Debug.Log("Player died!");
-    }
-
-    void PausePlayerMovement()
-    {
         allowMovement = false;
         r2d.linearVelocity = Vector2.zero;
         moveDirection = 0;

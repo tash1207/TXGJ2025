@@ -177,9 +177,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   timeToSubtract: 3
+  timeToAdd: 5
   bounceForce: 30
   bounceCooldown: 1
   animator: {fileID: 3124930993683137995}
+  audioSource: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: a430992f3006d05459aa56272c64a169, type: 3}
 --- !u!95 &3124930993683137995
 Animator:
   serializedVersion: 7
