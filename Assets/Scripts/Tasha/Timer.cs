@@ -29,6 +29,7 @@ public class Timer : MonoBehaviour
             {
                 timeLeft = 0;
                 timerOn = false;
+                // Handle timer ran out logic here.
             }
         }
     }
@@ -61,5 +62,15 @@ public class Timer : MonoBehaviour
     public float GetTimeRemaining()
     {
         return timeLeft;
+    }
+
+    public void AddTime(float timeToAddSeconds)
+    {
+        timeLeft += timeToAddSeconds;
+    }
+
+    public void SubtractTime(float timeToSubtractSeconds)
+    {
+        timeLeft -= timeToSubtractSeconds;
     }
 }
