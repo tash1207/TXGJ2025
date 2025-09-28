@@ -11,6 +11,8 @@ public class Enemy : MonoBehaviour
     public float dashSpeed = 8f;
     public LayerMask playerLayerMask = -1;
 
+    public float timeToSubtract = 3f;
+
     private enum EnemyState
     {
         Idle,
@@ -99,17 +101,18 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
-    // Instantly kill player on contact
+    // Subtract time on contact
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            var playerScript = collision.gameObject.GetComponent<CharacterController2D>();
-            if (playerScript != null)
-            {
-                playerScript.Die();
-                Debug.Log($"{name} killed the player!");
-            }
+            Timer.OnSubtractTime(timeToSubtract);
+            // var playerScript = collision.gameObject.GetComponent<CharacterController2D>();
+            // if (playerScript != null)
+            // {
+            //     playerScript.Die();
+            //     Debug.Log($"{name} killed the player!");
+            // }
         }
     }
 

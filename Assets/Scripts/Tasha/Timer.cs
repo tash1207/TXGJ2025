@@ -8,6 +8,7 @@ public class Timer : MonoBehaviour
     [SerializeField] float initialDuration = 30f;
 
     public static Action OnTimeRunOut;
+    public static Action<float> OnSubtractTime;
 
     float timeLeft = 0f;
     bool timerOn = false;
@@ -16,6 +17,16 @@ public class Timer : MonoBehaviour
     {
         ResetTimer();
         StartTimer();
+    }
+
+    void OnEnable()
+    {
+        OnSubtractTime += SubtractTime;
+    }
+
+    void OnDisable()
+    {
+        OnSubtractTime -= SubtractTime;
     }
 
     void Update()
