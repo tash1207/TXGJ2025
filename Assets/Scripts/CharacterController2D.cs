@@ -38,8 +38,6 @@ public class CharacterController2D : MonoBehaviour
     private bool wasGrounded = false;
     private int groundContactCount = 0;
 
-    bool allowMovement = true;
-
     void Start()
     {
         t = transform;
@@ -69,16 +67,6 @@ public class CharacterController2D : MonoBehaviour
         }
     }
 
-    void OnEnable()
-    {
-        Timer.OnTimeRunOut += Die;
-    }
-
-    void OnDisable()
-    {
-        Timer.OnTimeRunOut -= Die;
-    }
-
     void OnDestroy()
     {
         // Clean up input action callbacks
@@ -90,8 +78,6 @@ public class CharacterController2D : MonoBehaviour
 
     void Update()
     {
-        if (!allowMovement) { return; }
-
         // Store previous ground state
         wasGrounded = isGrounded;
 
@@ -151,7 +137,7 @@ public class CharacterController2D : MonoBehaviour
         {
             float speed = Mathf.Abs(moveDirection);
             animator.SetFloat("Speed", speed);
-            // animator.SetBool("isGrounded", isGrounded); // Commented out until parameter is created
+            animator.SetBool("isGrounded", isGrounded); // Uncommented - make sure you have this parameter in your Animator
 
             // Debug animation values (remove this line once animations are working)
             Debug.Log($"Speed: {speed}, isGrounded: {isGrounded}, moveDirection: {moveDirection}");
@@ -189,6 +175,8 @@ public class CharacterController2D : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
+        Debug.Log($"Trigger Exit: {other.name}, Layer: {other.gameObject.layer}");
+
         if (other == groundCheckCollider) return; // Ignore self
 
         // Check if the colliding object is on the ground layer
@@ -196,6 +184,10 @@ public class CharacterController2D : MonoBehaviour
         {
             groundContactCount = Mathf.Max(0, groundContactCount - 1);
             Debug.Log($"Ground contact removed! Total: {groundContactCount}");
+        }
+        else
+        {
+            Debug.Log($"Exit from non-ground layer object: {other.name}");
         }
     }
 
@@ -218,10 +210,5 @@ public class CharacterController2D : MonoBehaviour
         {
             animator.SetTrigger("Die");
         }
-
-        allowMovement = false;
-        r2d.linearVelocity = Vector2.zero;
-        moveDirection = 0;
-        animator.SetFloat("Speed", 0);
     }
 }
