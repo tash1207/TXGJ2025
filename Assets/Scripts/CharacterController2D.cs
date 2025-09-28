@@ -87,11 +87,13 @@ public class CharacterController2D : MonoBehaviour
     void OnEnable()
     {
         Timer.OnTimeRunOut += Die;
+        WinGame.OnGameWon += PausePlayerMovement;
     }
 
     void OnDisable()
     {
         Timer.OnTimeRunOut -= Die;
+        WinGame.OnGameWon -= PausePlayerMovement;
     }
 
     void OnDestroy()
@@ -340,11 +342,16 @@ public class CharacterController2D : MonoBehaviour
             animator.SetTrigger("Die");
         }
 
+        PausePlayerMovement();
+
+        Debug.Log("Player died!");
+    }
+
+    void PausePlayerMovement()
+    {
         allowMovement = false;
         r2d.linearVelocity = Vector2.zero;
         moveDirection = 0;
         animator.SetFloat("Speed", 0);
-
-        Debug.Log("Player died!");
     }
 }

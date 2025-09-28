@@ -22,11 +22,13 @@ public class Timer : MonoBehaviour
     void OnEnable()
     {
         OnSubtractTime += SubtractTime;
+        WinGame.OnGameWon += PauseTimer;
     }
 
     void OnDisable()
     {
         OnSubtractTime -= SubtractTime;
+        WinGame.OnGameWon -= PauseTimer;
     }
 
     void Update()

@@ -4,7 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class GameOverPopup : MonoBehaviour
 {
-    [SerializeField] GameObject popup;
+    [SerializeField] GameObject gameOverPopup;
+    [SerializeField] GameObject gameWinPopup;
 
     const int MainScreen = 0;
     const int Level1 = 1;
@@ -12,11 +13,13 @@ public class GameOverPopup : MonoBehaviour
     void OnEnable()
     {
         Timer.OnTimeRunOut += ShowGameOverAfterDelay;
+        WinGame.OnGameWon += ShowGameWin;
     }
 
     void OnDisable()
     {
         Timer.OnTimeRunOut -= ShowGameOverAfterDelay;
+        WinGame.OnGameWon -= ShowGameWin;
     }
 
     public void ShowGameOverAfterDelay()
@@ -28,7 +31,12 @@ public class GameOverPopup : MonoBehaviour
     {
         // Allow death animation to play.
         yield return new WaitForSeconds(1.5f);
-        popup.SetActive(true);
+        gameOverPopup.SetActive(true);
+    }
+
+    public void ShowGameWin()
+    {
+        gameWinPopup.SetActive(true);
     }
 
     public void ExitGame()
