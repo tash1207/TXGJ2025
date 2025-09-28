@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     public float dashSpeed = 8f;
     public LayerMask playerLayerMask = -1;
     public float timeToSubtract = 3f;
+    public float timeToAdd = 5f;
     public float bounceForce = 5f;
     public float bounceCooldown = 1f;
 
@@ -28,6 +29,10 @@ public class Enemy : MonoBehaviour
     private Rigidbody2D rb;
     private bool facingRight = true;
     private float lastBounceTime = 0f;
+
+    private float subtractTimeCooldownTimer = 1f;
+    private float cooldownDuration = 1f;
+    private bool hasAddedTime = false;
 
     void Start()
     {
@@ -51,6 +56,8 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         if (player == null) return;
+
+        subtractTimeCooldownTimer += Time.deltaTime;
 
         switch (currentState)
         {
@@ -131,6 +138,19 @@ public class Enemy : MonoBehaviour
         StartCoroutine(DestroyAfterDelay(0.5f));
     }
 
+    public float GetTimeToAdd()
+    {
+        if (hasAddedTime)
+        {
+            return 0;
+        }
+        else
+        {
+            hasAddedTime = true;
+            return timeToAdd;
+        }
+    }
+
     IEnumerator DestroyAfterDelay(float delay)
     {
         // Stop movement during death animation
@@ -147,7 +167,11 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             // Subtract time from timer
-            Timer.OnSubtractTime(timeToSubtract);
+            if (subtractTimeCooldownTimer > cooldownDuration)
+            {
+                Timer.OnSubtractTime(timeToSubtract);
+                subtractTimeCooldownTimer = 0f;   
+            }
 
             // Calculate bounce direction (away from player)
             Vector2 bounceDirection = (transform.position - collision.transform.position).normalized;

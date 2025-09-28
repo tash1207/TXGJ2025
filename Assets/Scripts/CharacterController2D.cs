@@ -316,6 +316,7 @@ public class CharacterController2D : MonoBehaviour
                     var enemyScript = enemy.GetComponent<Enemy>();
                     if (enemyScript != null)
                     {
+                        float timeToAdd = enemyScript.GetTimeToAdd();
                         enemyScript.Die();
                         Debug.Log($"Killed enemy: {enemy.name}");
 
@@ -323,7 +324,7 @@ public class CharacterController2D : MonoBehaviour
                         var timer = FindObjectOfType<Timer>();
                         if (timer != null)
                         {
-                            timer.AddTime(5f); // Add 5 seconds for killing an enemy
+                            timer.AddTime(timeToAdd); // Add time for killing an enemy
                         }
                     }
                 }
