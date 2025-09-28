@@ -22,6 +22,9 @@ public class CharacterController2D : MonoBehaviour
     public Collider2D groundCheckCollider;
     public LayerMask groundLayerMask = -1;
 
+    [Header("Animation")]
+    public Animator animator;
+
     bool facingRight = true;
     float moveDirection = 0;
     bool isGrounded = false;
@@ -44,6 +47,12 @@ public class CharacterController2D : MonoBehaviour
         r2d.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         r2d.gravityScale = gravityScale;
         facingRight = t.localScale.x > 0;
+
+        // Auto-find animator if not assigned
+        if (animator == null)
+        {
+            animator = GetComponent<Animator>();
+        }
 
         // Enable input actions
         if (moveAction != null)
@@ -74,6 +83,9 @@ public class CharacterController2D : MonoBehaviour
 
         // Update ground state based on trigger contacts
         isGrounded = groundContactCount > 0;
+
+        // Debug ground state
+        Debug.Log($"Ground contacts: {groundContactCount}, isGrounded: {isGrounded}");
 
         // Read input from the new Input System
         if (moveAction != null)
@@ -120,10 +132,15 @@ public class CharacterController2D : MonoBehaviour
             jumpPressed = false;
         }
 
-        // Clear jump input if we're not grounded to prevent buffering
-        if (!isGrounded)
+        // Update animator parameters
+        if (animator != null)
         {
-            jumpPressed = false;
+            float speed = Mathf.Abs(moveDirection);
+            animator.SetFloat("Speed", speed);
+            // animator.SetBool("isGrounded", isGrounded); // Commented out until parameter is created
+
+            // Debug animation values (remove this line once animations are working)
+            Debug.Log($"Speed: {speed}, isGrounded: {isGrounded}, moveDirection: {moveDirection}");
         }
     }
 
@@ -140,12 +157,19 @@ public class CharacterController2D : MonoBehaviour
     // Trigger events for ground detection
     void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log($"Trigger Enter: {other.name}, Layer: {other.gameObject.layer}");
+
         if (other == groundCheckCollider) return; // Ignore self
 
         // Check if the colliding object is on the ground layer
         if (IsInLayerMask(other.gameObject.layer, groundLayerMask))
         {
             groundContactCount++;
+            Debug.Log($"Ground contact added! Total: {groundContactCount}");
+        }
+        else
+        {
+            Debug.Log($"Not ground layer. Expected layers in mask: {groundLayerMask.value}");
         }
     }
 
@@ -157,6 +181,7 @@ public class CharacterController2D : MonoBehaviour
         if (IsInLayerMask(other.gameObject.layer, groundLayerMask))
         {
             groundContactCount = Mathf.Max(0, groundContactCount - 1);
+            Debug.Log($"Ground contact removed! Total: {groundContactCount}");
         }
     }
 
@@ -170,5 +195,14 @@ public class CharacterController2D : MonoBehaviour
     private void OnJump(InputAction.CallbackContext context)
     {
         jumpPressed = true;
+    }
+
+    // Call this method when player dies
+    public void Die()
+    {
+        if (animator != null)
+        {
+            animator.SetTrigger("Die");
+        }
     }
 }

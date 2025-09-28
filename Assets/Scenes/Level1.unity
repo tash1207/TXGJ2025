@@ -12017,7 +12017,8 @@ MonoBehaviour:
   groundCheckCollider: {fileID: 1282169978}
   groundLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
+  animator: {fileID: 1840027065}
 --- !u!4 &1282169977 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2513814276453892493, guid: 41d7e371f718059448e5f0f5c3186722, type: 3}
@@ -12236,6 +12237,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!95 &1840027065 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 760233892749122541, guid: 41d7e371f718059448e5f0f5c3186722, type: 3}
+  m_PrefabInstance: {fileID: 1282169974}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

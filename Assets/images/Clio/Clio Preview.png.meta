@@ -1,0 +1,1055 @@
+fileFormatVersion: 2
+guid: 46e7ddf51c6f2934da1e484b8d08407c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -827073434224408231
+    second: Clio Preview_0
+  - first:
+      213: 6257579326613365998
+    second: Clio Preview_1
+  - first:
+      213: 3537084136298301823
+    second: Clio Preview_2
+  - first:
+      213: -8180445455196299274
+    second: Clio Preview_3
+  - first:
+      213: -2364143086577497139
+    second: Clio Preview_4
+  - first:
+      213: 2855606027886902178
+    second: Clio Preview_5
+  - first:
+      213: 2707483322667727711
+    second: Clio Preview_6
+  - first:
+      213: -7961294159868305370
+    second: Clio Preview_7
+  - first:
+      213: 2181190206116719827
+    second: Clio Preview_8
+  - first:
+      213: 48845157623375272
+    second: Clio Preview_9
+  - first:
+      213: 5966197479190009967
+    second: Clio Preview_10
+  - first:
+      213: -7442294717118857977
+    second: Clio Preview_11
+  - first:
+      213: 3465301296041735505
+    second: Clio Preview_12
+  - first:
+      213: 4497097154610802678
+    second: Clio Preview_13
+  - first:
+      213: 8887950167627485679
+    second: Clio Preview_14
+  - first:
+      213: 3431177460200388450
+    second: Clio Preview_15
+  - first:
+      213: 2086537822539233207
+    second: Clio Preview_16
+  - first:
+      213: 1166875345502713876
+    second: Clio Preview_17
+  - first:
+      213: -233721675867430889
+    second: Clio Preview_18
+  - first:
+      213: 4969521673041382178
+    second: Clio Preview_19
+  - first:
+      213: -1992108080701749143
+    second: Clio Preview_20
+  - first:
+      213: -7017773091695906850
+    second: Clio Preview_21
+  - first:
+      213: -4392357225501188913
+    second: Clio Preview_22
+  - first:
+      213: 4804904788572993245
+    second: Clio Preview_23
+  - first:
+      213: 8591627314844178745
+    second: Clio Preview_24
+  - first:
+      213: -7746051113709226880
+    second: Clio Preview_25
+  - first:
+      213: -656747846267800887
+    second: Clio Preview_26
+  - first:
+      213: -3192325050852676406
+    second: Clio Preview_27
+  - first:
+      213: -7330698180941060164
+    second: Clio Preview_28
+  - first:
+      213: 851925825036775376
+    second: Clio Preview_29
+  - first:
+      213: -6800708553216512153
+    second: Clio Preview_30
+  - first:
+      213: -5087128447378124893
+    second: Clio Preview_31
+  - first:
+      213: 9147987994934705822
+    second: Clio Preview_32
+  - first:
+      213: 7156800078704350404
+    second: Clio Preview_33
+  - first:
+      213: -4782171596509281591
+    second: Clio Preview_34
+  - first:
+      213: -5926488778253893637
+    second: Clio Preview_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Clio Preview_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 293
+        width: 20
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95944e5f715a584f0800000000000000
+      internalID: -827073434224408231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clio Preview_1
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 293
+        width: 19
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee42e945e3367d650800000000000000
+      internalID: 6257579326613365998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clio Preview_2
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 293
+        width: 18
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f79cabc184f361130800000000000000
+      internalID: 3537084136298301823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clio Preview_3
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 293
+        width: 30
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ffd09a4338397e80800000000000000
+      internalID: -8180445455196299274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clio Preview_4
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 293
+        width: 32
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcb4a567360e03fd0800000000000000
+      internalID: -2364143086577497139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clio Preview_5
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 293
+        width: 52
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2abb9ae7d8621a720800000000000000
+      internalID: 2855606027886902178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clio Preview_6
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 230
+        width: 24
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5b77e2bcb9e29520800000000000000
+      internalID: 2707483322667727711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clio Preview_7
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 230
+        width: 25
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62068a0742dc38190800000000000000
+      internalID: -7961294159868305370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clio Preview_8
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 230
+        width: 25
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dce52f9fe4254e10800000000000000
+      internalID: 2181190206116719827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clio Preview_9
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 231
+        width: 31
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a5a32d79688da000800000000000000
+      internalID: 48845157623375272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clio Preview_10
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 231
+        width: 31
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6893fe3ff03cc250800000000000000
+      internalID: 5966197479190009967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clio Preview_11
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 231
+        width: 30
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70d3d50c268a7b890800000000000000
+      internalID: -7442294717118857977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clio Preview_12
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 169
+        width: 28
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 155b4463b29371030800000000000000
+      internalID: 3465301296041735505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clio Preview_13
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 172
+        width: 29
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ff2ff41906e86e30800000000000000
+      internalID: 4497097154610802678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clio Preview_14
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 169
+        width: 21
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe15fca4697585b70800000000000000
+      internalID: 8887950167627485679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clio Preview_15
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 168
+        width: 22
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 267329c88bdfd9f20800000000000000
+      internalID: 3431177460200388450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clio Preview_16
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 171
+        width: 29
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b73eda381fd4fc10800000000000000
+      internalID: 2086537822539233207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clio Preview_17
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 169
+        width: 21
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 418b9d1c1f2913010800000000000000
+      internalID: 1166875345502713876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clio Preview_18
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 117
+        width: 20
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 710ec95cf57a1ccf0800000000000000
+      internalID: -233721675867430889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clio Preview_19
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 117
+        width: 19
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22b8c39c1a947f440800000000000000
+      internalID: 4969521673041382178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clio Preview_20
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 117
+        width: 20
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9684697514c9a54e0800000000000000
+      internalID: -1992108080701749143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clio Preview_21
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 123
+        width: 42
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edfab2b0e8cdb9e90800000000000000
+      internalID: -7017773091695906850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clio Preview_22
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 123
+        width: 42
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcc916700663b03c0800000000000000
+      internalID: -4392357225501188913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clio Preview_23
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 123
+        width: 41
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd6777e92737ea240800000000000000
+      internalID: 4804904788572993245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clio Preview_24
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 61
+        width: 22
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93994dfb5879b3770800000000000000
+      internalID: 8591627314844178745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clio Preview_25
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 61
+        width: 25
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 084b75b6d8f708490800000000000000
+      internalID: -7746051113709226880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clio Preview_26
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 61
+        width: 18
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c2743c3053c2e6f0800000000000000
+      internalID: -656747846267800887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clio Preview_27
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 61
+        width: 23
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acc6858a74592b3d0800000000000000
+      internalID: -3192325050852676406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clio Preview_28
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 61
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb7e76918d0244a90800000000000000
+      internalID: -7330698180941060164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clio Preview_29
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 61
+        width: 19
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0df6c403606a2db00800000000000000
+      internalID: 851925825036775376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clio Preview_30
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 6
+        width: 18
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76fa1904a970f91a0800000000000000
+      internalID: -6800708553216512153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clio Preview_31
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 7
+        width: 18
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3af0e3f31a3e669b0800000000000000
+      internalID: -5087128447378124893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clio Preview_32
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 8
+        width: 18
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9efe9ffc9e24fe70800000000000000
+      internalID: 9147987994934705822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clio Preview_33
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 7
+        width: 18
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c419a3d0cf025360800000000000000
+      internalID: 7156800078704350404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clio Preview_34
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 6
+        width: 18
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c20a1f154052adb0800000000000000
+      internalID: -4782171596509281591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clio Preview_35
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 9
+        width: 45
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bff76d62bd1e0cda0800000000000000
+      internalID: -5926488778253893637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 858d586c2528d494f90feb8f2ec0902e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Clio Preview_0: -827073434224408231
+      Clio Preview_1: 6257579326613365998
+      Clio Preview_10: 5966197479190009967
+      Clio Preview_11: -7442294717118857977
+      Clio Preview_12: 3465301296041735505
+      Clio Preview_13: 4497097154610802678
+      Clio Preview_14: 8887950167627485679
+      Clio Preview_15: 3431177460200388450
+      Clio Preview_16: 2086537822539233207
+      Clio Preview_17: 1166875345502713876
+      Clio Preview_18: -233721675867430889
+      Clio Preview_19: 4969521673041382178
+      Clio Preview_2: 3537084136298301823
+      Clio Preview_20: -1992108080701749143
+      Clio Preview_21: -7017773091695906850
+      Clio Preview_22: -4392357225501188913
+      Clio Preview_23: 4804904788572993245
+      Clio Preview_24: 8591627314844178745
+      Clio Preview_25: -7746051113709226880
+      Clio Preview_26: -656747846267800887
+      Clio Preview_27: -3192325050852676406
+      Clio Preview_28: -7330698180941060164
+      Clio Preview_29: 851925825036775376
+      Clio Preview_3: -8180445455196299274
+      Clio Preview_30: -6800708553216512153
+      Clio Preview_31: -5087128447378124893
+      Clio Preview_32: 9147987994934705822
+      Clio Preview_33: 7156800078704350404
+      Clio Preview_34: -4782171596509281591
+      Clio Preview_35: -5926488778253893637
+      Clio Preview_4: -2364143086577497139
+      Clio Preview_5: 2855606027886902178
+      Clio Preview_6: 2707483322667727711
+      Clio Preview_7: -7961294159868305370
+      Clio Preview_8: 2181190206116719827
+      Clio Preview_9: 48845157623375272
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
