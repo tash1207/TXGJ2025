@@ -10,8 +10,12 @@ public class Enemy : MonoBehaviour
     public float sightRange = 5f;
     public float dashSpeed = 8f;
     public LayerMask playerLayerMask = -1;
-
     public float timeToSubtract = 3f;
+    public float bounceForce = 5f;
+    public float bounceCooldown = 1f;
+
+    [Header("Animation")]
+    public Animator animator;
 
     private enum EnemyState
     {
@@ -23,6 +27,7 @@ public class Enemy : MonoBehaviour
     private Transform player;
     private Rigidbody2D rb;
     private bool facingRight = true;
+    private float lastBounceTime = 0f;
 
     void Start()
     {
@@ -34,6 +39,12 @@ public class Enemy : MonoBehaviour
         if (playerObj != null)
         {
             player = playerObj.transform;
+        }
+
+        // Auto-find animator if not assigned
+        if (animator == null)
+        {
+            animator = GetComponent<Animator>();
         }
     }
 
@@ -50,6 +61,9 @@ public class Enemy : MonoBehaviour
                 HandleDashState();
                 break;
         }
+
+        // Update animations
+        UpdateAnimations();
     }
 
     void HandleIdleState()
@@ -57,11 +71,14 @@ public class Enemy : MonoBehaviour
         // Stop movement
         rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
 
-        // Check if player is in sight range
-        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
-        if (distanceToPlayer <= sightRange)
+        // Check if player is in sight range (only if not recently bounced)
+        if (Time.time >= lastBounceTime + bounceCooldown)
         {
-            StartDash();
+            float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+            if (distanceToPlayer <= sightRange)
+            {
+                StartDash();
+            }
         }
     }
 
@@ -91,13 +108,36 @@ public class Enemy : MonoBehaviour
     void StartDash()
     {
         currentState = EnemyState.Dashing;
-        Debug.Log($"{name} is dashing at player!");
+    }
+
+    void UpdateAnimations()
+    {
+        if (animator == null) return;
+
+        // Set animation parameters based on current state
+        animator.SetBool("IsIdle", currentState == EnemyState.Idle);
+        animator.SetBool("IsDashing", currentState == EnemyState.Dashing);
     }
 
     // Called by player's attack system - instantly kills enemy
     public void Die()
     {
-        Debug.Log($"{name} was killed by player attack!");
+        if (animator != null)
+        {
+            animator.SetTrigger("Die");
+        }
+
+        // Destroy after short delay for death animation
+        StartCoroutine(DestroyAfterDelay(0.5f));
+    }
+
+    IEnumerator DestroyAfterDelay(float delay)
+    {
+        // Stop movement during death animation
+        rb.linearVelocity = Vector2.zero;
+        currentState = EnemyState.Idle; // Prevent further state changes
+
+        yield return new WaitForSeconds(delay);
         Destroy(gameObject);
     }
 
@@ -106,13 +146,27 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            // Subtract time from timer
             Timer.OnSubtractTime(timeToSubtract);
-            // var playerScript = collision.gameObject.GetComponent<CharacterController2D>();
-            // if (playerScript != null)
-            // {
-            //     playerScript.Die();
-            //     Debug.Log($"{name} killed the player!");
-            // }
+
+            // Calculate bounce direction (away from player)
+            Vector2 bounceDirection = (transform.position - collision.transform.position).normalized;
+
+            // Method 1: Direct translation (instant movement)
+            transform.Translate(bounceDirection * bounceForce * 0.01f);
+
+            // Method 2: Set velocity directly (alternative)
+            // rb.linearVelocity = new Vector2(bounceDirection.x * bounceForce, 0);
+
+            // Method 3: Stop dash movement and apply force (alternative)
+            // rb.linearVelocity = Vector2.zero;
+            // rb.AddForce(bounceDirection * bounceForce, ForceMode2D.Impulse);
+
+            // Return to idle state and set bounce cooldown
+            currentState = EnemyState.Idle;
+            lastBounceTime = Time.time;
+
+            Debug.Log($"{name} bounced off player! Direction: {bounceDirection}, Force: {bounceForce}");
         }
     }
 

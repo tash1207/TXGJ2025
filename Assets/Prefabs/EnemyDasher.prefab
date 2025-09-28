@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6991027288548161261}
   - component: {fileID: 8347867795714760637}
   - component: {fileID: 3124930993683137995}
+  - component: {fileID: 3370479454883818343}
   m_Layer: 0
   m_Name: EnemyDasher
   m_TagString: Untagged
@@ -175,6 +176,10 @@ MonoBehaviour:
   playerLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
+  timeToSubtract: 3
+  bounceForce: 30
+  bounceCooldown: 1
+  animator: {fileID: 3124930993683137995}
 --- !u!95 &3124930993683137995
 Animator:
   serializedVersion: 7
@@ -197,3 +202,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!111 &3370479454883818343
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779447693106142417}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Animation: {fileID: 7400000, guid: d403e6c8f25adbc4a9001f0f79cd651a, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 5c9e8834827e6304a89a1bf826e1e945, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_UpdateMode: 0
+  m_CullingType: 0
