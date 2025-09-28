@@ -256,12 +256,29 @@ public class CharacterController2D : MonoBehaviour
         if (sprayAttack == null) return;
 
         // Position the particle system in front of the player
-        Vector3 attackPosition = transform.position + new Vector3(facingRight ? 1f : -1f, 0, 0);
+        Vector3 attackPosition = transform.position + new Vector3(facingRight ? 0.5f : -0.5f, 0, 0);
         sprayAttack.transform.position = attackPosition;
 
-        // Rotate the spray based on facing direction
+        // Rotate the entire particle system based on facing direction
+        if (facingRight)
+        {
+            sprayAttack.transform.rotation = Quaternion.Euler(0, 0, 0); // Face right
+        }
+        else
+        {
+            sprayAttack.transform.rotation = Quaternion.Euler(0, 180, 0); // Face left (flip Y axis)
+        }
+
+        // Alternative method if the above doesn't work - modify the shape module
         var shape = sprayAttack.shape;
-        shape.rotation = new Vector3(0, 0, facingRight ? 0 : 180);
+        if (facingRight)
+        {
+            shape.rotation = new Vector3(0, 0, 0);
+        }
+        else
+        {
+            shape.rotation = new Vector3(0, 0, 180);
+        }
 
         // Play the particle system
         sprayAttack.Play();
@@ -269,7 +286,7 @@ public class CharacterController2D : MonoBehaviour
         // Start coroutine to detect enemies in spray area
         StartCoroutine(AttackCoroutine());
 
-        Debug.Log("Attack performed!");
+        Debug.Log($"Attack performed facing {(facingRight ? "right" : "left")}!");
     }
 
     private IEnumerator AttackCoroutine()
@@ -327,5 +344,7 @@ public class CharacterController2D : MonoBehaviour
         r2d.linearVelocity = Vector2.zero;
         moveDirection = 0;
         animator.SetFloat("Speed", 0);
+
+        Debug.Log("Player died!");
     }
 }
