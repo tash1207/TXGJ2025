@@ -5250,4 +5250,6 @@ MonoBehaviour:
   enemyLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
+  audioSource: {fileID: 0}
+  attackSound: {fileID: 0}
   animator: {fileID: 760233892749122541}
