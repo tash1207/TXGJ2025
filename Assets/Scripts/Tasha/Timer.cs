@@ -1,20 +1,19 @@
+using System;
 using TMPro;
 using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
     [SerializeField] TMP_Text timerText;
-    [SerializeField] float initialDuration = 10f;
+    [SerializeField] float initialDuration = 30f;
 
-    CharacterController2D charController;
+    public static Action OnTimeRunOut;
 
     float timeLeft = 0f;
     bool timerOn = false;
 
     void Start()
     {
-        charController = FindFirstObjectByType<CharacterController2D>();
-
         ResetTimer();
         StartTimer();
     }
@@ -33,8 +32,7 @@ public class Timer : MonoBehaviour
             {
                 timeLeft = 0;
                 timerOn = false;
-                // Handle timer ran out logic here.
-                charController.Die();
+                OnTimeRunOut();
             }
         }
     }

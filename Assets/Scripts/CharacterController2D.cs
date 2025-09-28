@@ -69,6 +69,16 @@ public class CharacterController2D : MonoBehaviour
         }
     }
 
+    void OnEnable()
+    {
+        Timer.OnTimeRunOut += Die;
+    }
+
+    void OnDisable()
+    {
+        Timer.OnTimeRunOut -= Die;
+    }
+
     void OnDestroy()
     {
         // Clean up input action callbacks

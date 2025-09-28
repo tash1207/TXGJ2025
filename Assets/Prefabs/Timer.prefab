@@ -252,4 +252,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Timer
   timerText: {fileID: 2094595110084851745}
-  initialDuration: 60
+  initialDuration: 30
