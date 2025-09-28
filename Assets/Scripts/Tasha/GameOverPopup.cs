@@ -6,6 +6,9 @@ public class GameOverPopup : MonoBehaviour
 {
     [SerializeField] GameObject popup;
 
+    const int MainScreen = 0;
+    const int Level1 = 1;
+
     void OnEnable()
     {
         Timer.OnTimeRunOut += ShowGameOverAfterDelay;
@@ -28,8 +31,13 @@ public class GameOverPopup : MonoBehaviour
         popup.SetActive(true);
     }
 
+    public void ExitGame()
+    {
+        SceneManager.LoadScene(MainScreen);
+    }
+
     public void RestartLevel()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(Level1);
     }
 }
