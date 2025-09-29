@@ -172,4 +172,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0f94570d93104c44ae30f33fcc694c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimePickup
-  timeValue: 3
+  timeValue: 5

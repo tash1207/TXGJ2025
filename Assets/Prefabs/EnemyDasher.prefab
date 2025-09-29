@@ -84,7 +84,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 14
+  m_SortingOrder: 20
   m_Sprite: {fileID: 477624731932831720, guid: 0472795f070c6484ba2b8e7917d91882, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -178,7 +178,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   timeToSubtract: 3
-  timeToAdd: 5
+  timeToAdd: 4
   bounceForce: 30
   bounceCooldown: 1
   animator: {fileID: 3124930993683137995}
