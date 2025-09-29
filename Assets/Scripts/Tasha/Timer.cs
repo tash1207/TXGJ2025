@@ -13,6 +13,8 @@ public class Timer : MonoBehaviour
     float timeLeft = 0f;
     bool timerOn = false;
 
+    bool timeRanOut = false;
+
     void Start()
     {
         ResetTimer();
@@ -33,7 +35,7 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
-        if (timerOn)
+        if (timerOn && !timeRanOut)
         {
             if (timeLeft > 0)
             {
@@ -43,8 +45,9 @@ public class Timer : MonoBehaviour
             }
             else
             {
-                timeLeft = 0;
                 timerOn = false;
+                timeRanOut = true;
+                timeLeft = 0;
                 OnTimeRunOut();
             }
         }
@@ -73,6 +76,7 @@ public class Timer : MonoBehaviour
     public void ResetTimer()
     {
         timeLeft = initialDuration;
+        timeRanOut = false;
     }
 
     public float GetTimeRemaining()
@@ -83,10 +87,12 @@ public class Timer : MonoBehaviour
     public void AddTime(float timeToAddSeconds)
     {
         timeLeft += timeToAddSeconds;
+        UpdateTimerUI();
     }
 
     public void SubtractTime(float timeToSubtractSeconds)
     {
         timeLeft -= timeToSubtractSeconds;
+        UpdateTimerUI();
     }
 }

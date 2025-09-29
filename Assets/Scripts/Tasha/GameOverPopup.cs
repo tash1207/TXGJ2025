@@ -10,6 +10,8 @@ public class GameOverPopup : MonoBehaviour
     const int MainScreen = 0;
     const int Level1 = 1;
 
+    bool gameLost = false;
+
     void OnEnable()
     {
         Timer.OnTimeRunOut += ShowGameOverAfterDelay;
@@ -29,6 +31,7 @@ public class GameOverPopup : MonoBehaviour
 
     IEnumerator ShowGameOverAfterDelayCoroutine()
     {
+        gameLost = true;
         // Allow death animation to play.
         yield return new WaitForSeconds(1.5f);
         gameOverPopup.SetActive(true);
@@ -36,7 +39,10 @@ public class GameOverPopup : MonoBehaviour
 
     public void ShowGameWin()
     {
-        gameWinPopup.SetActive(true);
+        if (!gameLost)
+        {
+            gameWinPopup.SetActive(true);   
+        }
     }
 
     public void ExitGame()

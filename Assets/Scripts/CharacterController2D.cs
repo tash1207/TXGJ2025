@@ -50,6 +50,7 @@ public class CharacterController2D : MonoBehaviour
     private float lastAttackTime = 0f;
 
     bool allowMovement = true;
+    public bool IsDead = false;
 
     void Start()
     {
@@ -346,6 +347,7 @@ public class CharacterController2D : MonoBehaviour
         }
 
         PausePlayerMovement();
+        IsDead = true;
     }
 
     void PausePlayerMovement()

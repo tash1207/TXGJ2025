@@ -193,6 +193,15 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            if (collision.gameObject.TryGetComponent(out CharacterController2D c))
+            {
+                if (c.IsDead)
+                {
+                    // Hacky way of stopping the enemy is the player died.
+                    isDead = true;
+                    return;
+                }
+            }
             // Subtract time from timer
             if (subtractTimeCooldownTimer > cooldownDuration)
             {
