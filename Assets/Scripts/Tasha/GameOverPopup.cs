@@ -7,10 +7,21 @@ public class GameOverPopup : MonoBehaviour
     [SerializeField] GameObject gameOverPopup;
     [SerializeField] GameObject gameWinPopup;
 
+    [SerializeField] AudioClip gameOverMusic;
+    [SerializeField] AudioClip gameWinMusic;
+
     const int MainScreen = 0;
     const int Level1 = 1;
 
     bool gameLost = false;
+
+    AudioSource audioSource;
+
+    void Start()
+    {
+        BackgroundMusic backgroundMusic = FindFirstObjectByType<BackgroundMusic>();
+        audioSource = backgroundMusic.GetAudioSource();
+    }
 
     void OnEnable()
     {
@@ -32,6 +43,10 @@ public class GameOverPopup : MonoBehaviour
     IEnumerator ShowGameOverAfterDelayCoroutine()
     {
         gameLost = true;
+        audioSource.Stop();
+        audioSource.clip = gameOverMusic;
+        audioSource.loop = false;
+        audioSource.Play();
         // Allow death animation to play.
         yield return new WaitForSeconds(1.5f);
         gameOverPopup.SetActive(true);
@@ -41,7 +56,10 @@ public class GameOverPopup : MonoBehaviour
     {
         if (!gameLost)
         {
-            gameWinPopup.SetActive(true);   
+            gameWinPopup.SetActive(true);
+            audioSource.Stop();
+            audioSource.clip = gameWinMusic;
+            audioSource.Play();
         }
     }
 

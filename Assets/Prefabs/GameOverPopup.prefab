@@ -1016,6 +1016,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameOverPopup
   gameOverPopup: {fileID: 4554758742690817120}
   gameWinPopup: {fileID: 5385923249871902631}
+  gameOverMusic: {fileID: 8300000, guid: 7412d0fcd669cf94689c5f3d77b1f489, type: 3}
+  gameWinMusic: {fileID: 8300000, guid: 937cfb18fe3138247aaa221c92ad38ba, type: 3}
 --- !u!1 &6787674641544545021
 GameObject:
   m_ObjectHideFlags: 0
