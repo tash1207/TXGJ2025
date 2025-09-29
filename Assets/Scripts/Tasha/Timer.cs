@@ -57,6 +57,7 @@ public class Timer : MonoBehaviour
     {
         // Since we round the float down, add 1 so the timer UI matches the real countdown.
         float currentTime = timeLeft + 1;
+        if (timeLeft <= 0) currentTime = 0f;
         float minutes = Mathf.FloorToInt(currentTime / 60);
         float seconds = Mathf.FloorToInt(currentTime % 60);
 
