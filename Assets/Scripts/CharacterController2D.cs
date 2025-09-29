@@ -95,11 +95,13 @@ public class CharacterController2D : MonoBehaviour
     void OnEnable()
     {
         Timer.OnTimeRunOut += Die;
+        WinGame.OnGameWon += PausePlayerMovement;
     }
 
     void OnDisable()
     {
         Timer.OnTimeRunOut -= Die;
+        WinGame.OnGameWon -= PausePlayerMovement;
     }
 
     void OnDestroy()
@@ -317,13 +319,14 @@ public class CharacterController2D : MonoBehaviour
                     var enemyScript = enemy.GetComponent<Enemy>();
                     if (enemyScript != null)
                     {
+                        float timeToAdd = enemyScript.GetTimeToAdd();
                         enemyScript.Die();
 
                         // Add time to timer (assuming you have a timer script)
                         var timer = FindObjectOfType<Timer>();
                         if (timer != null)
                         {
-                            timer.AddTime(5f); // Add 5 seconds for killing an enemy
+                            timer.AddTime(timeToAdd); // Add time for killing an enemy
                         }
                     }
                 }
@@ -342,6 +345,11 @@ public class CharacterController2D : MonoBehaviour
             animator.SetTrigger("Die");
         }
 
+        PausePlayerMovement();
+    }
+
+    void PausePlayerMovement()
+    {
         allowMovement = false;
         r2d.linearVelocity = Vector2.zero;
         moveDirection = 0;
