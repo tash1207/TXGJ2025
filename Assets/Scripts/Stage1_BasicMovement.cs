@@ -1,54 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(CapsuleCollider2D))]
+// This script makes a 2D character move left/right and jump
 public class Stage1_BasicMovement : MonoBehaviour
 {
-    [Header("Movement Settings")]
-    public float maxSpeed = 3.4f;
-    public float jumpHeight = 6.5f;
-    public float gravityScale = 1.5f;
+    // === MOVEMENT SETTINGS (you can change these in the Inspector) ===
+    public float moveSpeed = 5f;      // How fast the player moves
+    public float jumpForce = 10f;     // How high the player jumps
 
-    [Header("Input Actions")]
+    // === INPUT ACTIONS (drag your Input Actions here in the Inspector) ===
     public InputActionReference moveAction;
     public InputActionReference jumpAction;
 
-    [Header("Audio")]
-    public AudioSource audioSource;
-    public AudioClip jumpSound;
+    // === PRIVATE VARIABLES (the script uses these internally) ===
+    private Rigidbody2D rb;           // Reference to the Rigidbody2D component
+    private bool facingRight = true;  // Which direction is the player facing?
+    private float moveInput = 0;      // Stores the current movement input
+    private bool jumpPressed = false; // Has the jump button been pressed?
 
-    // Core components
-    private Rigidbody2D r2d;
-    private Transform t;
-    private bool facingRight = true;
-    private float moveDirection = 0;
-    private Vector2 moveInput;
-    private bool jumpPressed = false;
-
+    // Start runs once when the game begins
     void Start()
     {
-        // Get references to components
-        t = transform;
-        r2d = GetComponent<Rigidbody2D>();
+        // Get the Rigidbody2D component attached to this game object
+        rb = GetComponent<Rigidbody2D>();
 
-        // Configure rigidbody
-        r2d.freezeRotation = true;
-        r2d.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
-        r2d.gravityScale = gravityScale;
+        // Stop the player from rotating when they move
+        rb.freezeRotation = true;
 
-        // Set initial facing direction
-        facingRight = t.localScale.x > 0;
-
-        // Auto-find audio source if not assigned
-        if (audioSource == null)
-        {
-            audioSource = GetComponent<AudioSource>();
-        }
-
-        // Enable input
+        // Enable the input actions so they can receive input
         if (moveAction != null)
         {
             moveAction.action.Enable();
@@ -57,76 +36,65 @@ public class Stage1_BasicMovement : MonoBehaviour
         if (jumpAction != null)
         {
             jumpAction.action.Enable();
-            jumpAction.action.performed += OnJump;
+            jumpAction.action.performed += OnJump; // Call OnJump when jump button is pressed
         }
     }
 
+    // OnDestroy runs when the object is destroyed
     void OnDestroy()
     {
-        // Clean up input action callbacks
+        // Clean up the jump action callback
         if (jumpAction != null)
         {
             jumpAction.action.performed -= OnJump;
         }
     }
 
+    // Update runs every frame
     void Update()
     {
-        // Read input from the new Input System
+        // === READ MOVEMENT INPUT ===
         if (moveAction != null)
         {
-            moveInput = moveAction.action.ReadValue<Vector2>();
+            Vector2 input = moveAction.action.ReadValue<Vector2>();
+            moveInput = input.x; // Get the horizontal (left/right) input
         }
 
-        // Get movement direction
-        if (Mathf.Abs(moveInput.x) > 0.1f)
-        {
-            moveDirection = moveInput.x;
-        }
-        else
-        {
-            moveDirection = 0;
-        }
+        // === MOVE THE PLAYER ===
+        rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
 
-        // Flip character to face movement direction
-        if (moveDirection > 0 && !facingRight)
+        // === FLIP CHARACTER TO FACE MOVEMENT DIRECTION ===
+        // If moving right and facing left, flip to face right
+        if (moveInput > 0 && !facingRight)
+        {
+            Flip();
+        }
+        // If moving left and facing right, flip to face left
+        else if (moveInput < 0 && facingRight)
         {
             Flip();
         }
 
-        // Handle jumping - simple version, no ground check
+        // === HANDLE JUMPING ===
         if (jumpPressed)
         {
-            r2d.linearVelocity = new Vector2(r2d.linearVelocity.x, jumpHeight);
-
-            // Play jump sound
-            if (audioSource != null && jumpSound != null)
-            {
-                audioSource.PlayOneShot(jumpSound);
-            }
-
-            jumpPressed = false;
-        }
-        else if (moveDirection < 0 && facingRight)
-        {
-            Flip();
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            jumpPressed = false; // Reset the jump flag
         }
     }
 
-    void FixedUpdate()
-    {
-        // Apply movement velocity
-        float targetVelocityX = moveDirection * maxSpeed;
-        r2d.linearVelocity = new Vector2(targetVelocityX, r2d.linearVelocity.y);
-    }
-
+    // This function flips the character to face the other direction
     void Flip()
     {
-        facingRight = !facingRight;
-        t.localScale = new Vector3(-t.localScale.x, t.localScale.y, t.localScale.z);
+        facingRight = !facingRight; // Toggle the facing direction
+
+        // Flip the character by reversing the X scale
+        Vector3 scale = transform.localScale;
+        scale.x *= -1; // Multiply X by -1 to flip
+        transform.localScale = scale;
     }
 
-    // Input callback for jump action
+    // This function is called when the jump button is pressed
     private void OnJump(InputAction.CallbackContext context)
     {
         jumpPressed = true;

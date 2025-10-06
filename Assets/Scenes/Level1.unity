@@ -18909,13 +18909,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a70689bbc332f94439c25f7f14b77d9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Stage1_BasicMovement
-  maxSpeed: 3.4
-  jumpHeight: 6.5
-  gravityScale: 1.5
+  moveSpeed: 5
+  jumpForce: 10
   moveAction: {fileID: -1680190386980627800, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   jumpAction: {fileID: -2099379676528639254, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-  audioSource: {fileID: 1508932138}
-  jumpSound: {fileID: 8300000, guid: 14b0c64e9bdc8d446864ff896e4f7781, type: 3}
 --- !u!82 &1508932138 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 2704626406207782543, guid: 41d7e371f718059448e5f0f5c3186722, type: 3}

@@ -7,6 +7,7 @@ public class particleSpray : MonoBehaviour
     void Start()
     {
         sprayAttack.Play();
+
     }
 
     // Update is called once per frame
